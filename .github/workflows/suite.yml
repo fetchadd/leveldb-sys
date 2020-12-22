@@ -44,6 +44,11 @@ jobs:
       - uses: actions-rs/cargo@v1
         with:
           command: test
+      - name: Install rust toolchain
+        uses: hecrj/setup-rust-action@v1.3.4
+        with:
+          rust-version: stable
+          targets: x86_64-apple-ios
       - name: Build other cross compilations
         run: cargo build --target x86_64-apple-ios
     
